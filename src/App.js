@@ -46,7 +46,7 @@ function makeText(inputText) {
 }
 
 function App() {
-  const { register, watch, reset, getValues } = useForm({});
+  const { register, reset, getValues } = useForm({});
   const generateText = () => {
     let inputText = {
       questionGenre: getValues("questionGenre"),
@@ -74,7 +74,7 @@ function App() {
           <Card.Text>
             <Card.Link href="https://github.com/Nyanyan">Nyanyanさん</Card.Link>
             が作成された
-            <Card.Link hraf="https://github.com/Nyanyan/Programming_Question">
+            <Card.Link href="https://github.com/Nyanyan/Programming_Question">
               プログラミング質問ガイドライン
             </Card.Link>
             を参考に、フォームに入力された内容からマークダウン形式の質問文を生成します。
