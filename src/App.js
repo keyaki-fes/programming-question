@@ -46,24 +46,24 @@ function makeText(inputText) {
 }
 
 function App() {
-  const { register, watch, reset } = useForm({});
+  const { register, watch, reset, getValues } = useForm({});
   const generateText = () => {
+    let inputText = {
+      questionGenre: getValues("questionGenre"),
+      questionDeadline: getValues("questionDeadline"),
+      questionersLevel: getValues("questionersLevel"),
+      digression: getValues("digression"),
+      questionContent: getValues("questionContent"),
+      questionPurpose: getValues("questionPurpose"),
+      questionersEnv: getValues("questionersEnv"),
+      questionersCurrentStatus: getValues("questionersCurrentStatus"),
+      questionDetail: getValues("questionDetail"),
+      questionGoal: getValues("questionGoal"),
+      questionCode: getValues("questionCode"),
+      questionError: getValues("questionError"),
+    };
     const text = makeText(inputText);
     reset({ result: text });
-  };
-  let inputText = {
-    questionGenre: watch("questionGenre"),
-    questionDeadline: watch("questionDeadline"),
-    questionersLevel: watch("questionersLevel"),
-    digression: watch("digression"),
-    questionContent: watch("questionContent"),
-    questionPurpose: watch("questionPurpose"),
-    questionersEnv: watch("questionersEnv"),
-    questionersCurrentStatus: watch("questionersCurrentStatus"),
-    questionDetail: watch("questionDetail"),
-    questionGoal: watch("questionGoal"),
-    questionCode: watch("questionCode"),
-    questionError: watch("questionError"),
   };
   return (
     <div className="container">
